@@ -5,6 +5,10 @@ on:
     branches:
       - add-more-ci-commands
 
+concurrency:
+  group: ci-tests-${{ github.ref }}-1
+  cancel-in-progress: true
+
 jobs:
   cache:
     runs-on: ubuntu-latest
